@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Smart Grocery{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+  <div class="icon-placeholder">🍎🥦🛒</div>
+  <p class="subtext">Welcome back! Log in to keep your groceries organized, reduce waste, and discover meal ideas with what you already have.</p>
+  <h2 class="heading">Sign In</h2>
+
+  <!-- Backend Verification Messaging-->
+  {% if message %}
+    <p style="color:green;">{{ message }}</p>
+  {% elif error %}
+    <p style="color:red;">{{ error }}</p>
+    <pre style="color:red;">{{ details }}</pre>
+  {% endif %}
+
+  <form method="POST" action="{{ url_for('auth.login') }}">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" name="password" required />
+        <span class="show-placeholder">Show</span>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-button blue-button">Sign In</button>
+
+    <div class="bottom-link">
+      <p>Don’t have an account? <a href="{{ url_for('auth.register') }}">Sign up</a></p>
+    </div>
+  </form>
+</div>
+{% endblock %}

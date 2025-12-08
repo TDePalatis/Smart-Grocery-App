@@ -1,0 +1,17 @@
+{
+    "schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "GroceryItem",
+    "type": "object",
+    "properties": {
+      "id": { "type": "integer" },
+      "name": { "type": "string", "minLength": 1 },
+      "category": { "type": "string" },
+      "quantity": { "type": "number" },
+      "expiration_date": { "type": "string", "format": "date" },
+      "image_url": { "type": "string", "format": "uri" },
+      "added_at": { "type": "string", "format": "date-time" }
+    },
+    "required": ["name", "category", "quantity"],
+    "additionalProperties": false
+  }
+  

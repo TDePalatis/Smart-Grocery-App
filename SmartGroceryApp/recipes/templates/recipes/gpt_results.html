@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>GPT-Generated Recipes (Soon-to-Expire Items)</h2>
+
+{% if gpt_recipes %}
+    {% for recipe in gpt_recipes %}
+        <div style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #ccc;">
+            <pre style="white-space: pre-wrap;">{{ recipe }}</pre>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No recipes were generated.</p>
+{% endif %}
+
+<a href="{{ url_for('recipes.get_suggestions') }}">← Back to Suggested Recipes</a>
+
+{% endblock %}

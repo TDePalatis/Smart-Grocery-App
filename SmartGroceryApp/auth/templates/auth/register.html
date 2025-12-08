@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up - Smart Grocery{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+  <div class="icon-placeholder">🍓🥦🛒</div>
+  <p class="subtext">Join Smart Grocery and start tracking your food, managing your pantry, and discovering recipes that reduce waste.</p>
+
+  <h2 class="heading">Create Account</h2>
+
+  <!-- Backend Verification Messaging-->
+  {% if message %}
+  <p style="color:green;">{{ message }}</p>
+  {% elif error %}
+    <p style="color:red;">{{ error }}</p>
+    <pre style="color:red;">{{ details }}</pre>
+  {% endif %}
+
+  <form method="POST" action="{{ url_for('auth.register') }}">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Create Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" name="password" required />
+        <span class="show-placeholder">Show</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="confirm-password" name="confirm-password" required />
+        <span class="show-placeholder">Show</span>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-button blue-button">Sign Up</button>
+
+    <div class="bottom-link">
+      <p>Already have an account? <a href="{{ url_for('auth.login') }}">Log in</a></p>
+    </div>
+  </form>
+</div>
+{% endblock %}

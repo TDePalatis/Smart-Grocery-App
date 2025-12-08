@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Reports - Smart Grocery{% endblock %}
+
+{% block content %}
+<h1 class="dashboard-title">📊 Reports Dashboard</h1>
+
+<div class="dashboard-grid-3">
+  <!-- Weekly Summary -->
+  <div class="report-card">
+    <h2>🗓️ Weekly Summary</h2>
+    <strong>Used Items:</strong>
+    <ul>
+      {% for item in used_items %}
+        <li>{{ item.name }}</li>
+      {% else %}
+        <li>No items used this week.</li>
+      {% endfor %}
+    </ul>
+    <strong>Saved Recipes:</strong>
+    <ul>
+      {% for recipe in saved_recipes %}
+        <li>{{ recipe }}</li>
+      {% else %}
+        <li>No recipes saved this week.</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Expiring Items -->
+  <div class="report-card">
+    <h2>⏰ Expiring Soon</h2>
+    <ul>
+      {% for item in expiring_items %}
+        <li>{{ item.name }} <span class="expire-date">(expires: {{ item.expiration_date.strftime('%Y-%m-%d') }})</span></li>
+      {% else %}
+        <li>No items expiring soon.</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Waste Tracker -->
+  <div class="report-card">
+    <h2>💔 Waste Tracker</h2>
+    <ul>
+      {% for item in expired_items %}
+        <li>{{ item.name }} <span class="expire-date">(expired: {{ item.expiration_date.strftime('%Y-%m-%d') }})</span></li>
+      {% else %}
+        <li>No items expired.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<!-- Grocery Items -->
+<div class="dashboard-grid-1">
+  <div class="report-card">
+    <h2>🛒 Grocery Items</h2>
+    <ul>
+      {% for item in grocery_list %}
+        <li>{{ item }}</li>
+      {% else %}
+        <li>No items needed to make saved recipes.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<!-- Inventory Summary -->
+<h2 class="inventory-title">📊 Inventory Overview by Category</h2>
+<div class="inventory-grid">
+  {% for category, count in category_counts.items() %}
+    <div class="category-card">
+      <div class="category-name">{{ category }}</div>
+      <div class="category-count">{{ count }}</div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

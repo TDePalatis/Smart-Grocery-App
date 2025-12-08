@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="page-title">🛒 Grocery List</h2>
+
+{% if grocery_items %}
+  <div class="grocery-grid">
+    {% for item in grocery_items %}
+      <div class="grocery-card">
+        <span class="item-name">{{ item }}</span>
+        <button class="add-btn" onclick="populateForm('{{ item }}')">Add</button>
+      </div>
+    {% endfor %}
+  </div>
+
+  <hr>
+
+  <h3 class="section-title">Add Item to Inventory</h3>
+  <div class="form-card">
+    <form method="POST" action="{{ url_for('grocery.add_item') }}">
+      <label for="name">Item Name:</label>
+      <input type="text" name="name" id="item-name" readonly>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" name="quantity" min="1" required>
+
+      <label for="category">Category:</label>
+      <select name="category" id="category" required>
+        <option value="" disabled selected>Category</option>
+        {% for category in categories %}
+          <option value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="expiration_date">Expiration Date:</label>
+      <input type="date" name="expiration_date">
+
+      <button type="submit" class="submit-btn">Save Item</button>
+    </form>
+  </div>
+{% else %}
+  <p>No missing ingredients! Your pantry is fully stocked.</p>
+{% endif %}
+
+<script>
+  function populateForm(itemName) {
+    document.getElementById('item-name').value = itemName;
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+{% endblock %}

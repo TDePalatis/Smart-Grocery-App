@@ -1,0 +1,1035 @@
+/* Global page layout */
+body, .page-wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #fffde7);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Top title */
+.main-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 24px;
+  color: #2e7d32;
+}
+
+/* Black navbar */
+.black-navbar {
+  background-color: #000;
+  padding: 12px 24px;
+  text-align: center;
+}
+
+.black-navbar .nav-links {
+  display: inline-block;
+}
+
+.black-navbar .nav-links a {
+  color: #fff;
+  margin: 0 16px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.black-navbar .nav-links a:hover,
+.black-navbar .nav-links a.active {
+  text-decoration: underline;
+}
+
+/* Dashboard heading */
+.dashboard-heading {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Welcome message below heading */
+.welcome-message {
+  text-align: center;
+  font-size: 17px;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Container for dashboard content */
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+/* Card grid layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+/* Individual card styling */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Auth Pages (Login / Register) */
+.auth-container {
+  background-color: white;
+  padding: 40px 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.auth-container h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.auth-container p {
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.auth-container label {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.auth-container input[type="email"],
+.auth-container input[type="password"],
+.auth-container input[type="text"] {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-container .password-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-container .submit-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  width: 60%;
+  margin: 10px auto 0 auto;
+  display: block;
+}
+
+.auth-container .submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Inventory Table Styling */
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-table thead {
+  background-color: #007bff;
+  color: white;
+}
+
+.inventory-table th, .inventory-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.inventory-table th {
+  font-size: 16px;
+}
+
+.inventory-table td {
+  font-size: 15px;
+  color: #333;
+}
+
+/* Buttons */
+.btn-edit {
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  background-color: #218838;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+/* General Body Style */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #fffde7);
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo for Navbar */
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+/* Navbar Links */
+.navbar .nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Hide Navbar for Login and Register */
+body.login-page .navbar,
+body.register-page .navbar {
+  display: none;
+}
+
+/* Main Page Wrapper */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Smart Grocery Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Center 🥦 Smart Grocery for Login and Register */
+body.login-page .logo,
+body.register-page .logo {
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.section-header {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.section-header p {
+  color: #666;
+  margin: 0;
+}
+
+.classifier-controls {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.image-preview {
+  width: 300px;
+  height: 200px;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: #aaa;
+}
+.classifier-controls {
+  background: linear-gradient(to bottom right, #fefefe, #f0f4f8);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.classifier-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.classifier-header p {
+  margin-top: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.classifier-body {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  align-items: flex-start;
+}
+
+.classifier-preview {
+  flex: 1;
+  max-width: 300px;
+}
+
+.classifier-preview img {
+  width: 100%;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.classifier-ui {
+  flex: 1;
+}
+
+.classifier-ui input[type="file"],
+.classifier-ui input[type="text"],
+.classifier-ui button {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.mode-toggle {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+
+}
+
+.recipe-section {
+    margin-bottom: 3rem;
+}
+
+.recipe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.recipe-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 220px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card img {
+    border-radius: 10px;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.button-primary {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.button-primary:hover {
+    background-color: #218838;
+}
+
+.error-text {
+    color: red;
+    font-weight: bold;
+}
+
+.gpt-recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.gpt-recipe-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.gpt-recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.gpt-recipe-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.gpt-recipe-card h2,
+.gpt-recipe-card strong {
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.dashboard-title, .inventory-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+}
+
+.dashboard-grid-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.dashboard-grid-1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+.report-card, .category-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  max-width: 300px;
+  width: 100%;
+}
+
+.category-card {
+  text-align: center;
+}
+
+.category-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.category-count {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+.expire-date {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #e3fdfd, #ffe6fa);
+    color: #333;
+}
+
+.navbar {
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Page Header */
+h1, h2.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #222;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Section Cards */
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Inventory Overview Cards */
+.container {
+    margin-top: 3rem;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.col-md-3 {
+    flex: 0 1 200px;
+}
+
+.card.text-white {
+    background: linear-gradient(135deg, #6fb1fc, #4364f7);
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    padding: 1.2rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-container input[type="date"] {
+  color: #555;
+}
+
+.btn-save {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background-color: #45a049;
+}
+
+#grocery-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 1.5rem auto;
+}
+
+#grocery-list li {
+  background: #fff;
+  border-radius: 10px;
+  margin: 0.75rem 0;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-weight: 500;
+}
+
+#grocery-list button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#grocery-list button:hover {
+  background-color: #3e9141;
+}
+
+/* Form Styling Below the List */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin: 1rem 0 0.3rem;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+.grocery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.grocery-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.grocery-card:hover {
+  transform: translateY(-3px);
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.add-btn {
+  background-color: #28a745;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.form-card {
+  max-width: 400px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.grocery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.grocery-card {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.grocery-card:hover {
+  transform: translateY(-2px);
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.section-title {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.form-card {
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-card label {
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+}
+
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 0.25rem;
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #0069d9;
+}
+
+/* Force content area to be full width */
+main {
+  max-width: 100%;
+  padding: 2rem;
+}
+
+/* Let the grid layout work as expected */
+.grocery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Individual grocery cards */
+.grocery-card {
+  background: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+/* On hover, lift the card */
+.grocery-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Green Add button */
+.add-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.grocery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.grocery-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}

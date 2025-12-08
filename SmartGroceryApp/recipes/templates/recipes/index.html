@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}Recipes{% endblock %}
+
+{% block content %}
+
+<div class="recipe-section">
+    <h2>GPT Suggested Recipes</h2>
+    <form method="get" action="{{ url_for('recipes.suggest_recipes') }}">
+        <button type="submit" class="button-primary">Get GPT Recipe Suggestions</button>
+    </form>
+
+    {% if gpt_recipes %}
+        <div class="gpt-recipe-grid">
+            {% for recipe in gpt_recipes %}
+                {% if recipe.error %}
+                    <p style="color: red;">{{ recipe.error }}</p>
+                {% else %}
+                    <div class="gpt-recipe-card">
+                        {{ recipe | safe }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+<div class="recipe-section">
+    <h2>Spoonacular Suggested Recipes</h2>
+    {% if suggest_recipes %}
+        <div class="recipe-grid">
+        {% for recipe in suggest_recipes %}
+            <div class="recipe-card">
+                <strong>{{ recipe.title }}</strong><br>
+                <img src="{{ recipe.image }}" alt="{{ recipe.title }}"><br>
+                <form action="{{ url_for('recipes.save_recipe', recipe_id=recipe.id) }}" method="post">
+                    <button type="submit" class="button-primary">Save</button>
+                </form>
+                <a href="{{ url_for('recipes.get_recipe_details', recipe_id=recipe.id) }}">View Details</a>
+            </div>
+        {% endfor %}
+        </div>
+    {% elif error %}
+        <p class="error-text">{{ error }}</p>
+    {% endif %}
+</div>
+
+<!--Show users saved recipes-->
+<hr>
+
+<div class="recipe-section">
+    <h2>Your Saved Recipes</h2>
+    {% if saved_recipes %}
+        <div class="recipe-grid">
+        {% for recipe in saved_recipes %}
+            <div class="recipe-card">
+                <strong>{{ recipe.title }}</strong><br>
+                <img src="{{ recipe.image }}" alt="{{ recipe.title }}"><br>
+                <a href="{{ url_for('recipes.get_recipe_details', recipe_id=recipe.id) }}">View Details</a>
+                <form action="{{ url_for('recipes.unsave_recipe', recipe_id=recipe.id) }}" method="post">
+                    <button type="submit" class="button-primary" onclick="return confirm('Unsave this recipe?')">Unsave</button>
+                </form>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>You have no saved recipes.</p>
+    {% endif %}
+</div>
+
+
+  <script>
+    const button = document.getElementById('load-recipes');
+button.disabled = false;
+button.textContent = 'Generate Recipes';
+
+button.addEventListener('click', async () => {
+  button.disabled = true;
+  button.textContent = 'Loading...';
+      const response = await fetch('/recipes/suggestions');
+
+      const data = await response.json();
+      const output = document.getElementById('recipe-output');
+      output.textContent = data.recipes || data.message || data.error;
+  button.disabled = false;
+  button.textContent = 'Generate Recipes';
+    });
+  </script>
+
+{% endblock %}

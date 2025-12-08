@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Recipe",
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "ingredients": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "instructions": { "type": "string" },
+      "macros": {
+        "type": "object",
+        "properties": {
+          "calories": { "type": "number" },
+          "protein": { "type": "number" },
+          "carbs": { "type": "number" },
+          "fat": { "type": "number" }
+        },
+        "required": ["calories", "protein", "carbs", "fat"]
+      }
+    },
+    "required": ["name", "ingredients", "instructions", "macros"],
+    "additionalProperties": false
+  }
+  
