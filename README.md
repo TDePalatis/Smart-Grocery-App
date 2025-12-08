@@ -40,8 +40,8 @@ We built this app while documenting the entire process of using AI tools such as
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/TDePalatis/CS467-AI-Coder
-    cd CS467-AI-Coder-main
+    git clone https://github.com/TDePalatis/Smart-Grocery-App.git
+    cd Smart-Grocery-App
     ```
 
 2. **Install dependencies**:
@@ -91,11 +91,31 @@ This project includes a suite of automated tests using PyTest and a custom testi
 python -m venv .venv && source .venv/bin/activate     # Windows: .\.venv\Scripts\activate
 pip install -r requirements.txt pytest
 PYTHONPATH=. python -m pytest -q SmartGroceryApp/tests
+```
+
+### Running Tests
+
+From the project root (with the virtualenv activated):
+
+```bash
+pytest
+```
 
 
 ---
 
 ## 📁 Project Structure
+
+
+
+```
+Smart-Grocery-App/
+  ├── SmartGroceryApp/      # Flask application package
+  ├── tests/                # PyTest test suite
+  ├── run.py                # App entrypoint
+  ├── requirements.txt      # Python dependencies
+  └── README.md
+```
 
 ```
 SmartGroceryApp/
