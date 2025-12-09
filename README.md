@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Tests-PyTest-blueviolet.svg" />
 </p>
 
-This is a web-based application designed for the **CS467 Capstone Project** at Oregon State University. The goal is to explore the **maximum possible use of AI tools** while developing a functional app that reduces household food waste through intelligent grocery tracking and recipe suggestions.
+- This is a web-based application designed for the **CS467 Capstone Project** at Oregon State University. The goal is to explore the **maximum possible use of AI tools** while developing a functional app that reduces household food waste through intelligent grocery tracking and recipe suggestions.
 
 ---
 
@@ -47,7 +47,7 @@ Check out a walkthrough of the Smart Grocery Housekeeping App:
          alt="Smart Grocery Housekeeping Demo" width="600">
   </a>
 </p>
-___
+---
 
 ## My Contributions
 
@@ -199,7 +199,7 @@ SmartGroceryApp/
 
 ---
 
-##� Reports
+## Reports
 
 Includes usage and spoilage analytics rendered with Flask and Jinja2.
 
