@@ -18,6 +18,7 @@ In today’s fast-paced world, groceries often go unused and spoil. Our app help
 - Get notified about items nearing expiration
 - Receive recipe suggestions based on current pantry inventory
 - Track frequently used, spoiled, or unused items
+  
 We built this app while documenting the entire process of using AI tools such as ChatGPT, GitHub Copilot, Google Teachable Machine, and more.
 
 ---
